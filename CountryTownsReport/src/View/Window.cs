@@ -36,10 +36,14 @@ namespace CountryTownsReport.View
 
         //Methods
         private void CreateTable() {
-            DataGridView table = new DataGridView();
-            table.AutoSize = true;
+            //DataGridView table = new DataGridView();
+            //Config
+            table.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            table.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllHeaders;
+            //table.Size = new Size(1000, 1000);
+            //...
             table.DataSource = country.GenerateTable();
-            this.Controls.Add(table);
+            //this.Controls.Add(table);
         }
     }
 }
