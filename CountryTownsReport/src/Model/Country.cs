@@ -101,9 +101,15 @@ namespace CountryTownsReport.Model
 
             StreamReader streamReader = File.OpenText(path);
             string currentLine = "";
+            bool first = true;
             while ((currentLine = streamReader.ReadLine()) != null)
             {
-                info += "\n" + currentLine;
+                if (first)
+                    first = false;
+                else
+                    info += "\n";
+
+                info += currentLine;
             }
             streamReader.Close();
 

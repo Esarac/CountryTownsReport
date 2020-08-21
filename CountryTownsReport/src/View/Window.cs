@@ -33,7 +33,7 @@ namespace CountryTownsReport.View
             if (fileChooser.ShowDialog() == DialogResult.OK)
             {
                 this.country = new Country(fileChooser.FileName);
-                Console.WriteLine(country);
+                //Console.WriteLine(country);
                 CreateTable();
                 CreatePieChart();
             }
@@ -50,15 +50,9 @@ namespace CountryTownsReport.View
         }
 
         private void CreatePieChart() {
-            //Config
-            //chart.Size = new Size(1000, 1000);
-            //...
-
-            chart.Titles.Add("CHART LOL");
-            double totalTowns = country.TotalTowns();
+            chart.Titles.Add("Towns per Department");
             for (int i = 0; i < country.Departments.Count; i++) {
-                double percentage = country.Departments[i].Towns.Count / totalTowns;
-                chart.Series["s"].Points.AddXY(country.Departments[i].Name, percentage);
+                chart.Series["s"].Points.AddXY(country.Departments[i].Name, country.Departments[i].Towns.Count);
             }
 
 
