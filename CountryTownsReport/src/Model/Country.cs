@@ -79,7 +79,53 @@ namespace CountryTownsReport.Model
             string[] info = Read(path).Split('\n'); ;
 
             for (int i = 1; i < info.Length; i++) {
+
                 string[] townInfo = info[i].Split(',');
+                if (townInfo.Length > 5) {
+                    string[] townInfoPro = new string[5];
+
+                    int infoIndex = 0;
+                    bool open = false;
+
+                    for (int j = 0; j < townInfo.Length; j++) {
+
+                        if (townInfo[j][0] == '"') {
+
+                            open = true;
+                            townInfoPro[infoIndex] = townInfo[j].Substring(1, townInfo[j].Length - 1)+",";
+
+                        }
+                        else {
+
+                            if (open){
+
+                                if (townInfo[j][townInfo[j].Length - 1] == '"'){
+
+                                    open = false;
+                                    townInfoPro[infoIndex] += townInfo[j].Substring(0, townInfo[j].Length - 1);
+                                    infoIndex++;
+
+                                }
+                                else{
+
+                                    townInfoPro[infoIndex] += townInfo[j]+",";
+
+                                }
+
+                            }
+                            else{
+
+                                townInfoPro[infoIndex] = townInfo[j];
+                                infoIndex++;
+
+                            }
+
+                        }
+
+                    }
+
+                    townInfo = townInfoPro;
+                }
 
                 bool found = false;
                 for (int j = 0; (j < departments.Count) && (!found); j++){
