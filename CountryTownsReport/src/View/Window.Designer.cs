@@ -63,7 +63,7 @@
             this.bar.Location = new System.Drawing.Point(0, 0);
             this.bar.Name = "bar";
             this.bar.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.bar.Size = new System.Drawing.Size(686, 24);
+            this.bar.Size = new System.Drawing.Size(1904, 24);
             this.bar.TabIndex = 0;
             // 
             // file
@@ -94,8 +94,8 @@
             // panel.Panel2
             // 
             this.panel.Panel2.Controls.Add(this.panelGroup);
-            this.panel.Size = new System.Drawing.Size(686, 366);
-            this.panel.SplitterDistance = 343;
+            this.panel.Size = new System.Drawing.Size(1904, 1017);
+            this.panel.SplitterDistance = 952;
             this.panel.SplitterWidth = 3;
             this.panel.TabIndex = 1;
             this.panel.Text = "splitContainer1";
@@ -106,7 +106,7 @@
             this.table.Dock = System.Windows.Forms.DockStyle.Fill;
             this.table.Location = new System.Drawing.Point(0, 0);
             this.table.Name = "table";
-            this.table.Size = new System.Drawing.Size(343, 366);
+            this.table.Size = new System.Drawing.Size(952, 1017);
             this.table.TabIndex = 0;
             this.table.Text = "dataGridView1";
             // 
@@ -119,12 +119,15 @@
             // panelGroup.Panel1
             // 
             this.panelGroup.Panel1.Controls.Add(this.idPanel);
+            this.panelGroup.Panel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             // 
             // panelGroup.Panel2
             // 
             this.panelGroup.Panel2.Controls.Add(this.chart);
-            this.panelGroup.Size = new System.Drawing.Size(339, 369);
-            this.panelGroup.SplitterDistance = 86;
+            this.panelGroup.Panel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.panelGroup.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.panelGroup.Size = new System.Drawing.Size(949, 1017);
+            this.panelGroup.SplitterDistance = 100;
             this.panelGroup.SplitterWidth = 3;
             this.panelGroup.TabIndex = 0;
             this.panelGroup.Text = "splitContainer1";
@@ -136,7 +139,7 @@
             this.idPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.idPanel.Location = new System.Drawing.Point(0, 0);
             this.idPanel.Name = "idPanel";
-            this.idPanel.Size = new System.Drawing.Size(339, 86);
+            this.idPanel.Size = new System.Drawing.Size(949, 100);
             this.idPanel.TabIndex = 0;
             // 
             // textfield
@@ -157,18 +160,21 @@
             // 
             // chart
             // 
+            this.chart.BackImageAlignment = System.Windows.Forms.DataVisualization.Charting.ChartImageAlignmentStyle.Center;
             chartArea1.Name = "ChartArea1";
             this.chart.ChartAreas.Add(chartArea1);
+            this.chart.Dock = System.Windows.Forms.DockStyle.Fill;
             legend1.Name = "Legend1";
             this.chart.Legends.Add(legend1);
             this.chart.Location = new System.Drawing.Point(0, 0);
             this.chart.Name = "chart";
+            this.chart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
             series1.Legend = "Legend1";
             series1.Name = "s";
             this.chart.Series.Add(series1);
-            this.chart.Size = new System.Drawing.Size(340, 274);
+            this.chart.Size = new System.Drawing.Size(949, 914);
             this.chart.TabIndex = 0;
             this.chart.Text = "chart";
             // 
@@ -176,8 +182,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(686, 390);
+            this.ClientSize = new System.Drawing.Size(1904, 1041);
             this.Controls.Add(this.panel);
             this.Controls.Add(this.bar);
             this.Name = "Window";

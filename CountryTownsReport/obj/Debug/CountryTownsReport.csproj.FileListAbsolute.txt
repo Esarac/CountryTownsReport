@@ -8,3 +8,13 @@ C:\Users\ariza\OneDrive\Escritorio\CountryTownsReport\CountryTownsReport\obj\Deb
 C:\Users\ariza\OneDrive\Escritorio\CountryTownsReport\CountryTownsReport\obj\Debug\CountryTownsReport.csproj.CoreCompileInputs.cache
 C:\Users\ariza\OneDrive\Escritorio\CountryTownsReport\CountryTownsReport\obj\Debug\CountryTownsReport.exe
 C:\Users\ariza\OneDrive\Escritorio\CountryTownsReport\CountryTownsReport\obj\Debug\CountryTownsReport.pdb
+C:\Users\ariza\OneDrive\Documentos\GitHub\CountryTownsReport\CountryTownsReport\obj\Debug\CountryTownsReport.csprojAssemblyReference.cache
+C:\Users\ariza\OneDrive\Documentos\GitHub\CountryTownsReport\CountryTownsReport\obj\Debug\CountryTownsReport.Properties.Resources.resources
+C:\Users\ariza\OneDrive\Documentos\GitHub\CountryTownsReport\CountryTownsReport\obj\Debug\CountryTownsReport.View.Window.resources
+C:\Users\ariza\OneDrive\Documentos\GitHub\CountryTownsReport\CountryTownsReport\obj\Debug\CountryTownsReport.csproj.GenerateResource.cache
+C:\Users\ariza\OneDrive\Documentos\GitHub\CountryTownsReport\CountryTownsReport\obj\Debug\CountryTownsReport.csproj.CoreCompileInputs.cache
+C:\Users\ariza\OneDrive\Documentos\GitHub\CountryTownsReport\CountryTownsReport\obj\Debug\CountryTownsReport.exe
+C:\Users\ariza\OneDrive\Documentos\GitHub\CountryTownsReport\CountryTownsReport\obj\Debug\CountryTownsReport.pdb
+C:\Users\ariza\OneDrive\Documentos\GitHub\CountryTownsReport\CountryTownsReport\bin\Debug\CountryTownsReport.exe.config
+C:\Users\ariza\OneDrive\Documentos\GitHub\CountryTownsReport\CountryTownsReport\bin\Debug\CountryTownsReport.exe
+C:\Users\ariza\OneDrive\Documentos\GitHub\CountryTownsReport\CountryTownsReport\bin\Debug\CountryTownsReport.pdb

@@ -50,11 +50,18 @@ namespace CountryTownsReport.View
         }
 
         private void CreatePieChart() {
-            chart.Titles.Add("CHART LOL");
+            //Config
+            //chart.Size = new Size(1000, 1000);
+            //...
 
-            chart.Series["s"].Points.AddXY("johan", 33);
-            chart.Series["s"].Points.AddXY("ariza", 34);
-            chart.Series["s"].Points.AddXY("hola", 33);
+            chart.Titles.Add("CHART LOL");
+            double totalTowns = country.TotalTowns();
+            for (int i = 0; i < country.Departments.Count; i++) {
+                double percentage = country.Departments[i].Towns.Count / totalTowns;
+                chart.Series["s"].Points.AddXY(country.Departments[i].Name, percentage);
+            }
+
+
         }
     }
 }

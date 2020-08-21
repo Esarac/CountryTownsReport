@@ -19,6 +19,16 @@ namespace CountryTownsReport.Model
         }
 
         //Methods
+        public int TotalTowns() {
+            int total = 0;
+
+            for (int i = 0; i < departments.Count; i++) {
+                total += departments[i].Towns.Count;
+            }
+
+            return total;
+        }
+
         public DataTable GenerateTable() {
             DataTable table = new DataTable();
 
