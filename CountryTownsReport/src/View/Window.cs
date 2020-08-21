@@ -30,7 +30,15 @@ namespace CountryTownsReport.View
             if (fileChooser.ShowDialog() == DialogResult.OK) {
                 this.country = new Country(fileChooser.FileName);
                 Console.WriteLine(country);
+                CreateTable();
             }
+        }
+
+        //Methods
+        private void CreateTable() {
+            DataGridView table = new DataGridView();
+            table.DataSource = country.GenerateTable();
+            this.Controls.Add(table);
         }
     }
 }

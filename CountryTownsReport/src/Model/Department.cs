@@ -39,5 +39,10 @@ namespace CountryTownsReport.Model
             get { return id; }
             set { id = value; }
         }
+
+        public List<Town> Towns {
+            get { return towns; }
+            set { towns = value; }
+        }
     }
 }

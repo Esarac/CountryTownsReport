@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.IO;
 using System.Linq;
+using System.Data;
 
 namespace CountryTownsReport.Model
 {
@@ -18,6 +19,11 @@ namespace CountryTownsReport.Model
         }
 
         //Methods
+        public DataTable GenerateTable() {
+            DataTable table = new DataTable();
+            return table;
+        }
+
         public void Load(string path) {
             string[] info = Read(path).Split('\n'); ;
 
@@ -59,6 +65,12 @@ namespace CountryTownsReport.Model
                 toString += "\n" + departments[i];
             }
             return toString;
+        }
+
+        //Properties
+        public List<Department> Departments {
+            get { return departments; }
+            set { departments = value; }
         }
 
     }
