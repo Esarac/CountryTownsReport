@@ -21,6 +21,47 @@ namespace CountryTownsReport.Model
         //Methods
         public DataTable GenerateTable() {
             DataTable table = new DataTable();
+
+            //Region
+            DataColumn region = new DataColumn();
+            region.DataType = Type.GetType("System.String");
+            region.ColumnName = "REGION";
+            table.Columns.Add(region);
+            //DepartmentId
+            DataColumn departmentId = new DataColumn();
+            departmentId.DataType = Type.GetType("System.String");
+            departmentId.ColumnName = "DEPARTMENT DANE ID";
+            table.Columns.Add(departmentId);
+            //Department
+            DataColumn department = new DataColumn();
+            department.DataType = Type.GetType("System.String");
+            department.ColumnName = "DEPARTMENT";
+            table.Columns.Add(department);
+            //TownId
+            DataColumn townId = new DataColumn();
+            townId.DataType = Type.GetType("System.String");
+            townId.ColumnName = "TOWN DANE ID";
+            table.Columns.Add(townId);
+            //Town
+            DataColumn town = new DataColumn();
+            town.DataType = Type.GetType("System.String");
+            town.ColumnName = "TOWN";
+            table.Columns.Add(town);
+
+            for (int i = 0; i < departments.Count; i++){
+                for (int j = 0; j < departments[i].Towns.Count; j++) {
+                    DataRow row = table.NewRow();
+
+                    row["REGION"] = departments[i].Region;
+                    row["DEPARTMENT DANE ID"] = departments[i].Id;
+                    row["DEPARTMENT"] = departments[i].Name;
+                    row["TOWN DANE ID"] = departments[i].Towns[j].Id;
+                    row["TOWN"] = departments[i].Towns[j].Name;
+
+                    table.Rows.Add(row);
+                }
+            }
+
             return table;
         }
 

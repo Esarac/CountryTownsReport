@@ -37,6 +37,7 @@ namespace CountryTownsReport.View
         //Methods
         private void CreateTable() {
             DataGridView table = new DataGridView();
+            table.AutoSize = true;
             table.DataSource = country.GenerateTable();
             this.Controls.Add(table);
         }

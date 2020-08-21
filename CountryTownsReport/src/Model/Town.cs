@@ -20,5 +20,16 @@ namespace CountryTownsReport.Model
         public override string ToString(){
             return name+", "+id;
         }
+
+        //Properties
+        public string Name{
+            get { return name; }
+            set { name = value; }
+        }
+
+        public string Id{
+            get { return id; }
+            set { id = value; }
+        }
     }
 }

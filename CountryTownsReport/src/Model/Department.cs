@@ -35,9 +35,19 @@ namespace CountryTownsReport.Model
         }
 
         //Properties
+        public string Name {
+            get { return name; }
+            set { name = value; }
+        }
+
         public string Id {
             get { return id; }
             set { id = value; }
+        }
+
+        public string Region {
+            get { return region; }
+            set { region = value; }
         }
 
         public List<Town> Towns {
