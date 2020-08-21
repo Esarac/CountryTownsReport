@@ -15,35 +15,46 @@ namespace CountryTownsReport.View
         private Country country;
 
         //Constructor
-        public Window(){
+        public Window()
+        {
             InitializeComponent();
         }
 
         //Triggers
-        private void Window_Load(object sender, EventArgs e){
+        private void Window_Load(object sender, EventArgs e)
+        {
 
         }
 
-        private void Import_Click(object sender, EventArgs e){
+        private void Import_Click(object sender, EventArgs e)
+        {
             OpenFileDialog fileChooser = new OpenFileDialog();
 
-            if (fileChooser.ShowDialog() == DialogResult.OK) {
+            if (fileChooser.ShowDialog() == DialogResult.OK)
+            {
                 this.country = new Country(fileChooser.FileName);
                 Console.WriteLine(country);
                 CreateTable();
+                CreatePieChart();
             }
         }
 
         //Methods
-        private void CreateTable() {
-            //DataGridView table = new DataGridView();
+        private void CreateTable()
+        {
             //Config
             table.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             table.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllHeaders;
-            //table.Size = new Size(1000, 1000);
             //...
             table.DataSource = country.GenerateTable();
-            //this.Controls.Add(table);
+        }
+
+        private void CreatePieChart() {
+            chart.Titles.Add("CHART LOL");
+
+            chart.Series["s"].Points.AddXY("johan", 33);
+            chart.Series["s"].Points.AddXY("ariza", 34);
+            chart.Series["s"].Points.AddXY("hola", 33);
         }
     }
 }
