@@ -37,7 +37,7 @@ namespace CountryTownsReport.Model
                 try
                 {
                     Town town = departmentPair.Value.Towns[daneId];
-                    info = departmentPair.Value.Region + " \t" + departmentPair.Value.Id + " \t" + departmentPair.Value.Name + " \t" + town.id + " \t" + town.Name;
+                    info = departmentPair.Value.Region + " \t" + departmentPair.Value.Id + " \t" + departmentPair.Value.Name + " \t" + town.Id + " \t" + town.Name;
                 }
                 catch (KeyNotFoundException) { }
             }

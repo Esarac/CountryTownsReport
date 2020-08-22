@@ -8,7 +8,7 @@ using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 using CountryTownsReport.Model;
 
-namespace CountryTownsReport.View
+namespace CountryTownsReport.Controller
 {
     public partial class Window : Form
     {
@@ -34,9 +34,10 @@ namespace CountryTownsReport.View
             if (fileChooser.ShowDialog() == DialogResult.OK)
             {
                 this.country = new Country(fileChooser.FileName);
-                //Console.WriteLine(country);
+                //Init
                 CreateTable();
                 CreatePieChart();
+                townInfo.Text = "";
             }
         }
 
@@ -61,12 +62,14 @@ namespace CountryTownsReport.View
 
         private void searchButton_Click(object sender, EventArgs e)
         {
-            string code = textfield.Text;
-            string info = country.SearchTown(code);
-            if (string.Equals(info, ""))
-                townInfo.Text = "The town couldn't be found, please try with other id!.";
-            else
-                townInfo.Text = info;
+            if (country != null) {
+                string code = textfield.Text;
+                string info = country.SearchTown(code);
+                if (string.Equals(info, ""))
+                    townInfo.Text = "The town couldn't be found, please try with other id!.";
+                else
+                    townInfo.Text = info;
+            }
         }
     }
 }

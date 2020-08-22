@@ -7,8 +7,8 @@ namespace CountryTownsReport.Model
     public class Town
     {
         //Attributes
-        public string name;
-        public string id;
+        private string name;
+        private string id;
 
         //Constructor
         public Town(string name, string id) {
