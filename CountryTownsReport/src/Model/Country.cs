@@ -10,22 +10,21 @@ namespace CountryTownsReport.Model
     public class Country
     {
         //Attributes
-        private List<Department> departments;
+        private Dictionary<string, Department> departments;
 
         //Contructor
         public Country(string path) {
-            this.departments = new List<Department>();
+            this.departments = new Dictionary<string, Department>();
             Load(path);
         }
 
         //Methods
         public int TotalTowns() {
             int total = 0;
-
-            for (int i = 0; i < departments.Count; i++) {
-                total += departments[i].Towns.Count;
+            foreach (KeyValuePair<string, Department> departmentPair in departments)
+            {
+                total += departmentPair.Value.Towns.Count;
             }
-
             return total;
         }
 
@@ -58,15 +57,17 @@ namespace CountryTownsReport.Model
             town.ColumnName = "TOWN";
             table.Columns.Add(town);
 
-            for (int i = 0; i < departments.Count; i++){
-                for (int j = 0; j < departments[i].Towns.Count; j++) {
+            foreach (KeyValuePair<string, Department> departmentPair in departments)
+            {
+                foreach (KeyValuePair<string, Town> townPair in departmentPair.Value.Towns) 
+                {
                     DataRow row = table.NewRow();
 
-                    row["REGION"] = departments[i].Region;
-                    row["DEPARTMENT DANE ID"] = departments[i].Id;
-                    row["DEPARTMENT"] = departments[i].Name;
-                    row["TOWN DANE ID"] = departments[i].Towns[j].Id;
-                    row["TOWN"] = departments[i].Towns[j].Name;
+                    row["REGION"] = departmentPair.Value.Region;
+                    row["DEPARTMENT DANE ID"] = departmentPair.Value.Id;
+                    row["DEPARTMENT"] = departmentPair.Value.Name;
+                    row["TOWN DANE ID"] = townPair.Value.Id;
+                    row["TOWN"] = townPair.Value.Name;
 
                     table.Rows.Add(row);
                 }
@@ -127,17 +128,15 @@ namespace CountryTownsReport.Model
                     townInfo = townInfoPro;
                 }
 
-                bool found = false;
-                for (int j = 0; (j < departments.Count) && (!found); j++){
-                    if (townInfo[1].Equals(departments[j].Id)) {
-                        departments[j].AddTown(new Town(townInfo[4], townInfo[3]));
-                        found = true;
-                    }
-                }                   
-                if(!found){
+                try
+                {
+                    departments[townInfo[1]].AddTown(new Town(townInfo[4], townInfo[3]));
+                }
+                catch (KeyNotFoundException)
+                {
                     Department newDepartment = new Department(townInfo[2], townInfo[1], townInfo[0]);
                     newDepartment.AddTown(new Town(townInfo[4], townInfo[3]));
-                    departments.Add(newDepartment);
+                    departments.Add(newDepartment.Id, newDepartment);
                 }
             }
         }
@@ -164,14 +163,15 @@ namespace CountryTownsReport.Model
 
         public override string ToString(){
             string toString = "--Country--";
-            for (int i = 0; i < departments.Count; i++) {
-                toString += "\n" + departments[i];
+            foreach (KeyValuePair<string, Department> departmentPair in departments) 
+            {
+                toString += "\n" + departmentPair.Value;
             }
             return toString;
         }
 
         //Properties
-        public List<Department> Departments {
+        public Dictionary<string, Department> Departments {
             get { return departments; }
             set { departments = value; }
         }

@@ -11,25 +11,26 @@ namespace CountryTownsReport.Model
         private string name;
         private string id;
         private string region;
-        private List<Town> towns;
+        private Dictionary<string, Town> towns;
 
         //Contructor
         public Department(string name, string id, string region) {
             this.name = name;
             this.id = id;
             this.region = region;
-            this.towns = new List<Town>();
+            this.towns = new Dictionary<string,Town>();
         }
 
         //Methods
         public void AddTown(Town town) {
-            this.towns.Add(town);
+            this.towns.Add(town.Id, town);
         }
 
         public override string ToString(){
             string toString = name +", "+id+", "+region+":";
-            for (int i = 0; i < towns.Count; i++){
-                toString += "\n\t" + towns[i];
+            foreach(KeyValuePair<string, Town> townPair in towns) 
+            {
+                toString += "\n\t" + townPair.Value;
             }
             return toString;
         }
@@ -50,7 +51,7 @@ namespace CountryTownsReport.Model
             set { region = value; }
         }
 
-        public List<Town> Towns {
+        public Dictionary<string, Town> Towns {
             get { return towns; }
             set { towns = value; }
         }

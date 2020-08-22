@@ -51,11 +51,10 @@ namespace CountryTownsReport.View
 
         private void CreatePieChart() {
             chart.Titles.Add("Towns per Department");
-            for (int i = 0; i < country.Departments.Count; i++) {
-                chart.Series["s"].Points.AddXY(country.Departments[i].Name, country.Departments[i].Towns.Count);
+            foreach (KeyValuePair<string, Department> departmentPair in country.Departments) 
+            {
+                chart.Series["s"].Points.AddXY(departmentPair.Value.Name, departmentPair.Value.Towns.Count);
             }
-
-
         }
     }
 }
