@@ -55,5 +55,9 @@ namespace CountryTownsReport.Model
             get { return towns; }
             set { towns = value; }
         }
+
+        public int TownsQuantity {
+            get { return towns.Count; }
+        }
     }
 }

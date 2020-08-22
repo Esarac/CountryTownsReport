@@ -4,6 +4,7 @@ using System.Text;
 using System.IO;
 using System.Linq;
 using System.Data;
+using System.Collections;
 
 namespace CountryTownsReport.Model
 {
@@ -19,13 +20,13 @@ namespace CountryTownsReport.Model
         }
 
         //Methods
-        public int TotalTowns() {
-            int total = 0;
+        public int AverageTownsPerDepartment() {
+            int sum = 0;
             foreach (KeyValuePair<string, Department> departmentPair in departments)
             {
-                total += departmentPair.Value.Towns.Count;
+                sum += departmentPair.Value.Towns.Count;
             }
-            return total;
+            return sum / departments.Count;
         }
 
         public DataTable GenerateTable() {
@@ -74,6 +75,48 @@ namespace CountryTownsReport.Model
             }
 
             return table;
+        }
+
+        public DataTable GenerateChart() {
+            DataTable chart = new DataTable();
+
+            //Region
+            DataColumn region = new DataColumn();
+            region.DataType = Type.GetType("System.String");
+            region.ColumnName = "REGION";
+            chart.Columns.Add(region);
+            //Quantity
+            DataColumn quantity = new DataColumn();
+            quantity.DataType = Type.GetType("System.Int32");
+            quantity.ColumnName = "TOWNS";
+            chart.Columns.Add(quantity);
+
+
+            int avg = AverageTownsPerDepartment();
+            int othersQuantity = 0;
+            foreach (KeyValuePair<string, Department> departmentPair in departments) {
+                if (departmentPair.Value.TownsQuantity >= avg)
+                {
+                    DataRow row = chart.NewRow();
+
+                    row["REGION"] = departmentPair.Value.Name;
+                    row["TOWNS"] = departmentPair.Value.TownsQuantity;
+
+                    chart.Rows.Add(row);
+                }
+                else{
+                    othersQuantity += departmentPair.Value.TownsQuantity;
+                }
+            }
+
+            DataRow rowO = chart.NewRow();
+
+            rowO["REGION"] = "Others";
+            rowO["TOWNS"] = othersQuantity;
+
+            chart.Rows.Add(rowO);
+
+            return chart;
         }
 
         public void Load(string path) {

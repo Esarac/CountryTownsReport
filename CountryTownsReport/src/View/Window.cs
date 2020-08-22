@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 using CountryTownsReport.Model;
 
 namespace CountryTownsReport.View
@@ -50,11 +51,12 @@ namespace CountryTownsReport.View
         }
 
         private void CreatePieChart() {
-            chart.Titles.Add("Towns per Department");
-            foreach (KeyValuePair<string, Department> departmentPair in country.Departments) 
-            {
-                chart.Series["s"].Points.AddXY(departmentPair.Value.Name, departmentPair.Value.Towns.Count);
-            }
+            //Config
+            chart.Series["s"].XValueMember = "REGION";
+            chart.Series["s"].YValueMembers = "TOWNS";
+            //...
+            chart.DataSource = country.GenerateChart();
+            chart.DataBind();
         }
     }
 }
