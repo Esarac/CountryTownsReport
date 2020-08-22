@@ -18,3 +18,13 @@ C:\Users\ariza\OneDrive\Documentos\GitHub\CountryTownsReport\CountryTownsReport\
 C:\Users\ariza\OneDrive\Documentos\GitHub\CountryTownsReport\CountryTownsReport\bin\Debug\CountryTownsReport.exe.config
 C:\Users\ariza\OneDrive\Documentos\GitHub\CountryTownsReport\CountryTownsReport\bin\Debug\CountryTownsReport.exe
 C:\Users\ariza\OneDrive\Documentos\GitHub\CountryTownsReport\CountryTownsReport\bin\Debug\CountryTownsReport.pdb
+C:\Users\jseba\Desktop\ALL\PROGRAMING\Integrador I\CountryTownsReport\CountryTownsReport\bin\Debug\CountryTownsReport.exe.config
+C:\Users\jseba\Desktop\ALL\PROGRAMING\Integrador I\CountryTownsReport\CountryTownsReport\bin\Debug\CountryTownsReport.exe
+C:\Users\jseba\Desktop\ALL\PROGRAMING\Integrador I\CountryTownsReport\CountryTownsReport\bin\Debug\CountryTownsReport.pdb
+C:\Users\jseba\Desktop\ALL\PROGRAMING\Integrador I\CountryTownsReport\CountryTownsReport\obj\Debug\CountryTownsReport.csprojAssemblyReference.cache
+C:\Users\jseba\Desktop\ALL\PROGRAMING\Integrador I\CountryTownsReport\CountryTownsReport\obj\Debug\CountryTownsReport.Properties.Resources.resources
+C:\Users\jseba\Desktop\ALL\PROGRAMING\Integrador I\CountryTownsReport\CountryTownsReport\obj\Debug\CountryTownsReport.View.Window.resources
+C:\Users\jseba\Desktop\ALL\PROGRAMING\Integrador I\CountryTownsReport\CountryTownsReport\obj\Debug\CountryTownsReport.csproj.GenerateResource.cache
+C:\Users\jseba\Desktop\ALL\PROGRAMING\Integrador I\CountryTownsReport\CountryTownsReport\obj\Debug\CountryTownsReport.csproj.CoreCompileInputs.cache
+C:\Users\jseba\Desktop\ALL\PROGRAMING\Integrador I\CountryTownsReport\CountryTownsReport\obj\Debug\CountryTownsReport.exe
+C:\Users\jseba\Desktop\ALL\PROGRAMING\Integrador I\CountryTownsReport\CountryTownsReport\obj\Debug\CountryTownsReport.pdb
