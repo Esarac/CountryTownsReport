@@ -63,7 +63,10 @@ namespace CountryTownsReport.View
         {
             string code = textfield.Text;
             string info = country.SearchTown(code);
-            townInfo.Text = info;
+            if (string.Equals(info, ""))
+                townInfo.Text = "The town couldn't be found, please try with other id!.";
+            else
+                townInfo.Text = info;
         }
     }
 }
