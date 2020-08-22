@@ -29,6 +29,21 @@ namespace CountryTownsReport.Model
             return sum / departments.Count;
         }
 
+        public string SearchTown(string daneId)
+        {
+            string info = "";
+            foreach (KeyValuePair<string, Department> departmentPair in departments)
+            {
+                try
+                {
+                    Town town = departmentPair.Value.Towns[daneId];
+                    info = departmentPair.Value.Region + " \t" + departmentPair.Value.Id + " \t" + departmentPair.Value.Name + " \t" + town.id + " \t" + town.Name;
+                }
+                catch (KeyNotFoundException) { }
+            }
+            return info;
+        }
+
         public DataTable GenerateTable() {
             DataTable table = new DataTable();
 

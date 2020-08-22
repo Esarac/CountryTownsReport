@@ -58,5 +58,12 @@ namespace CountryTownsReport.View
             chart.DataSource = country.GenerateChart();
             chart.DataBind();
         }
+
+        private void searchButton_Click(object sender, EventArgs e)
+        {
+            string code = textfield.Text;
+            string info = country.SearchTown(code);
+            townInfo.Text = info;
+        }
     }
 }
