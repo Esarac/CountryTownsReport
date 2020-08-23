@@ -29,42 +29,42 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Window));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title4 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.panelGroup = new System.Windows.Forms.SplitContainer();
             this.idPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.townInfo = new System.Windows.Forms.Label();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.textfield = new System.Windows.Forms.TextBox();
             this.searchButton = new System.Windows.Forms.Button();
             this.chartLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.chart = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.panel = new System.Windows.Forms.SplitContainer();
+            this.table = new System.Windows.Forms.DataGridView();
             this.bar = new System.Windows.Forms.MenuStrip();
             this.file = new System.Windows.Forms.ToolStripMenuItem();
             this.import = new System.Windows.Forms.ToolStripMenuItem();
-            this.panel = new System.Windows.Forms.SplitContainer();
-            this.table = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.panelGroup)).BeginInit();
             this.panelGroup.Panel1.SuspendLayout();
             this.panelGroup.Panel2.SuspendLayout();
             this.panelGroup.SuspendLayout();
             this.idPanel.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
             this.chartLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart)).BeginInit();
-            this.bar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panel)).BeginInit();
             this.panel.Panel1.SuspendLayout();
             this.panel.Panel2.SuspendLayout();
             this.panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.table)).BeginInit();
+            this.bar.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelGroup
             // 
             resources.ApplyResources(this.panelGroup, "panelGroup");
+            this.panelGroup.BackColor = System.Drawing.Color.White;
+            this.panelGroup.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panelGroup.Name = "panelGroup";
             // 
             // panelGroup.Panel1
@@ -80,21 +80,16 @@
             // idPanel
             // 
             resources.ApplyResources(this.idPanel, "idPanel");
+            this.idPanel.BackColor = System.Drawing.Color.White;
+            this.idPanel.Controls.Add(this.textfield);
+            this.idPanel.Controls.Add(this.searchButton);
             this.idPanel.Controls.Add(this.townInfo);
-            this.idPanel.Controls.Add(this.flowLayoutPanel1);
             this.idPanel.Name = "idPanel";
             // 
             // townInfo
             // 
             resources.ApplyResources(this.townInfo, "townInfo");
             this.townInfo.Name = "townInfo";
-            // 
-            // flowLayoutPanel1
-            // 
-            resources.ApplyResources(this.flowLayoutPanel1, "flowLayoutPanel1");
-            this.flowLayoutPanel1.Controls.Add(this.textfield);
-            this.flowLayoutPanel1.Controls.Add(this.searchButton);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             // 
             // textfield
             // 
@@ -111,6 +106,7 @@
             // chartLayoutPanel
             // 
             resources.ApplyResources(this.chartLayoutPanel, "chartLayoutPanel");
+            this.chartLayoutPanel.BackColor = System.Drawing.Color.White;
             this.chartLayoutPanel.Controls.Add(this.chart);
             this.chartLayoutPanel.Name = "chartLayoutPanel";
             // 
@@ -118,21 +114,55 @@
             // 
             resources.ApplyResources(this.chart, "chart");
             this.chart.BackImageAlignment = System.Windows.Forms.DataVisualization.Charting.ChartImageAlignmentStyle.Center;
-            chartArea4.Name = "ChartArea1";
-            this.chart.ChartAreas.Add(chartArea4);
-            legend4.Name = "Legend1";
-            this.chart.Legends.Add(legend4);
+            this.chart.BackImageTransparentColor = System.Drawing.Color.Transparent;
+            this.chart.BackSecondaryColor = System.Drawing.Color.Transparent;
+            this.chart.BorderSkin.BackColor = System.Drawing.Color.Transparent;
+            this.chart.BorderSkin.PageColor = System.Drawing.Color.Transparent;
+            chartArea1.Name = "ChartArea1";
+            this.chart.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart.Legends.Add(legend1);
             this.chart.Name = "chart";
-            this.chart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SemiTransparent;
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series4.IsValueShownAsLabel = true;
-            series4.Legend = "Legend1";
-            series4.Name = "s";
-            this.chart.Series.Add(series4);
-            title4.Name = "Title";
-            title4.Text = "Towns per Department";
-            this.chart.Titles.Add(title4);
+            this.chart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
+            series1.BackSecondaryColor = System.Drawing.Color.Transparent;
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series1.IsValueShownAsLabel = true;
+            series1.LabelBackColor = System.Drawing.Color.White;
+            series1.LabelBorderColor = System.Drawing.Color.Black;
+            series1.Legend = "Legend1";
+            series1.Name = "s";
+            series1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Chocolate;
+            this.chart.Series.Add(series1);
+            title1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title1.Name = "Title";
+            title1.Text = "TOWNS PER DEPARTMENT";
+            this.chart.Titles.Add(title1);
+            // 
+            // panel
+            // 
+            resources.ApplyResources(this.panel, "panel");
+            this.panel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel.Name = "panel";
+            // 
+            // panel.Panel1
+            // 
+            resources.ApplyResources(this.panel.Panel1, "panel.Panel1");
+            this.panel.Panel1.Controls.Add(this.table);
+            // 
+            // panel.Panel2
+            // 
+            resources.ApplyResources(this.panel.Panel2, "panel.Panel2");
+            this.panel.Panel2.Controls.Add(this.panelGroup);
+            // 
+            // table
+            // 
+            resources.ApplyResources(this.table, "table");
+            this.table.BackgroundColor = System.Drawing.Color.White;
+            this.table.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.table.Name = "table";
+            this.table.ReadOnly = true;
             // 
             // bar
             // 
@@ -156,28 +186,6 @@
             this.import.Name = "import";
             this.import.Click += new System.EventHandler(this.Import_Click);
             // 
-            // panel
-            // 
-            resources.ApplyResources(this.panel, "panel");
-            this.panel.Name = "panel";
-            // 
-            // panel.Panel1
-            // 
-            resources.ApplyResources(this.panel.Panel1, "panel.Panel1");
-            this.panel.Panel1.Controls.Add(this.table);
-            // 
-            // panel.Panel2
-            // 
-            resources.ApplyResources(this.panel.Panel2, "panel.Panel2");
-            this.panel.Panel2.Controls.Add(this.panelGroup);
-            // 
-            // table
-            // 
-            resources.ApplyResources(this.table, "table");
-            this.table.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.table.Name = "table";
-            this.table.ReadOnly = true;
-            // 
             // Window
             // 
             resources.ApplyResources(this, "$this");
@@ -193,17 +201,15 @@
             this.panelGroup.ResumeLayout(false);
             this.idPanel.ResumeLayout(false);
             this.idPanel.PerformLayout();
-            this.flowLayoutPanel1.ResumeLayout(false);
-            this.flowLayoutPanel1.PerformLayout();
             this.chartLayoutPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chart)).EndInit();
-            this.bar.ResumeLayout(false);
-            this.bar.PerformLayout();
             this.panel.Panel1.ResumeLayout(false);
             this.panel.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panel)).EndInit();
             this.panel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.table)).EndInit();
+            this.bar.ResumeLayout(false);
+            this.bar.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -222,7 +228,6 @@
         private System.Windows.Forms.Button searchButton;
         private System.Windows.Forms.FlowLayoutPanel chartLayoutPanel;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Label townInfo;
     }
 }
